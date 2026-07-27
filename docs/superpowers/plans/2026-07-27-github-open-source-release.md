@@ -21,19 +21,19 @@
 - Create: `SUPPORT.md`
 - Create: `docs/roadmap.md`
 
-- [ ] **Step 1: 重写 README 信息架构**
+- [x] **Step 1: 重写 README 信息架构**
 
 加入项目定位、截图、能力状态、下载、安装、快捷键、开发、架构、路线图、贡献、许可证和项目边界；禁止宣称已完整替代 PDF-XChange。
 
-- [ ] **Step 2: 对齐贡献与安全说明**
+- [x] **Step 2: 对齐贡献与安全说明**
 
 把版本支持范围更新为 `0.3.x`，写明私密漏洞报告入口、测试文件隐私要求、分支/测试/PR 门槛。
 
-- [ ] **Step 3: 增加社区健康文档**
+- [x] **Step 3: 增加社区健康文档**
 
 新增变更日志、行为准则、支持渠道和面向贡献者的公开路线图。
 
-- [ ] **Step 4: 扫描失效链接和本机路径**
+- [x] **Step 4: 扫描失效链接和本机路径**
 
 Run:
 
@@ -52,15 +52,15 @@ Expected: 公开入口文档无本机路径和占位内容；历史验证记录�
 - Create: `.github/dependabot.yml`
 - Create: `.github/ISSUE_TEMPLATE/documentation.yml`
 
-- [ ] **Step 1: 扩充 CI**
+- [x] **Step 1: 扩充 CI**
 
 在 Windows CI 中检查前端测试/构建、主程序 Rust fmt/clippy/test、缩略图处理器 fmt/clippy/test。
 
-- [ ] **Step 2: 完善贡献入口**
+- [x] **Step 2: 完善贡献入口**
 
 缺陷模板要求版本、复现步骤、脱敏日志和可合法分享的最小 PDF；新增文档问题模板，PR 模板覆盖测试、数据丢失、许可证和截图。
 
-- [ ] **Step 3: 配置依赖更新**
+- [x] **Step 3: 配置依赖更新**
 
 为 npm、Cargo、缩略图 Cargo 和 GitHub Actions 配置每周 Dependabot。
 
@@ -69,7 +69,7 @@ Expected: 公开入口文档无本机路径和占位内容；历史验证记录�
 **Files:**
 - Verify: all files selected by `git status --short`
 
-- [ ] **Step 1: 检查忽略与大文件**
+- [x] **Step 1: 检查忽略与大文件**
 
 Run:
 
@@ -79,7 +79,7 @@ git check-ignore -v work src-tauri/target node_modules dist
 
 Expected: 测试语料、构建产物和依赖目录全部被忽略。
 
-- [ ] **Step 2: 检查密钥和本机数据**
+- [x] **Step 2: 检查密钥和本机数据**
 
 Run:
 
@@ -89,7 +89,7 @@ rg -n --hidden -g '!node_modules/**' -g '!src-tauri/target/**' -g '!work/**' '(g
 
 Expected: 无凭证、私钥或真实用户 PDF 路径进入提交。
 
-- [ ] **Step 3: 运行完整质量门禁**
+- [x] **Step 3: 运行完整质量门禁**
 
 Run:
 
@@ -111,7 +111,7 @@ Expected: 所有命令退出码为 0。
 **Files:**
 - Stage: entire audited project worktree
 
-- [ ] **Step 1: 创建初始提交**
+- [x] **Step 1: 创建初始提交**
 
 将当前无提交分支重命名为 `main`，显式检查 staged diff 和大文件后提交：
 
@@ -122,7 +122,7 @@ git diff --cached --check
 git commit -m "feat: publish Luke PDF Editor"
 ```
 
-- [ ] **Step 2: 创建公开仓库并推送**
+- [x] **Step 2: 创建公开仓库并推送**
 
 Run:
 
@@ -132,14 +132,14 @@ gh repo create CommonerOfWestWall/luke-pdf-editor --public --source . --remote o
 
 Expected: `main` 推送成功，仓库可公开访问。
 
-- [ ] **Step 3: 设置仓库元数据与安全能力**
+- [x] **Step 3: 设置仓库元数据与安全能力**
 
 设置中英文描述、主页、topics、Issues、Discussions、私密漏洞报告和默认分支保护；仓库未支持的设置必须记录而不能假装成功。
 
-- [ ] **Step 4: 发布 v0.3.5 预发行版**
+- [x] **Step 4: 发布 v0.3.5 预发行版**
 
 创建 `v0.3.5` tag 和 GitHub prerelease，上传本轮已验证的中文 NSIS 安装包，发行说明明确未签名、Windows 范围和已知限制。
 
-- [ ] **Step 5: 验证远端**
+- [x] **Step 5: 验证远端**
 
 检查仓库公开性、默认分支、CI、Release 资源、LICENSE 检测、README 链接和安装包 SHA-256，并记录最终 URL。
