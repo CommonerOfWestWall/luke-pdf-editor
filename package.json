@@ -1,0 +1,41 @@
+{
+  "name": "luke-pdf-editor",
+  "private": true,
+  "version": "0.3.5",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "check": "npm test && npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e:build": "tauri build --debug --no-bundle --features e2e && node scripts/prepare-e2e-binary.mjs",
+    "test:e2e": "npm run test:e2e:build && node scripts/run-e2e.mjs",
+    "licenses": "node scripts/generate-license-report.mjs",
+    "thumbnail:build": "cargo build --release --locked --manifest-path src-tauri/thumbnail-handler/Cargo.toml",
+    "tauri": "tauri",
+    "bundle:windows": "npm run thumbnail:build && npm run licenses && tauri build --bundles nsis"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.11.1",
+    "lucide-react": "^1.26.0",
+    "mupdf": "1.28.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zustand": "5.0.14"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.11.4",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "6.0.3",
+    "@wdio/cli": "^9.30.0",
+    "@wdio/local-runner": "^9.30.0",
+    "@wdio/mocha-framework": "^9.30.0",
+    "@wdio/spec-reporter": "^9.29.1",
+    "@wdio/tauri-service": "1.0.0",
+    "typescript": "7.0.2",
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
+  }
+}

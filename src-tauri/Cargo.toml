@@ -1,0 +1,30 @@
+[package]
+name = "luke-pdf-editor"
+version = "0.3.5"
+description = "鲁科 PDF 编辑器"
+authors = ["Luke PDF contributors"]
+edition = "2024"
+license = "AGPL-3.0-or-later"
+
+[features]
+default = []
+e2e = ["dep:tauri-plugin-wdio-webdriver"]
+
+[lib]
+name = "luke_pdf_editor_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", features = [] }
+
+[dependencies]
+blake3 = "1.8.5"
+serde = { version = "1.0.229", features = ["derive"] }
+tauri = { version = "2.11.5", features = [] }
+tauri-plugin-dialog = "2.7.2"
+tempfile = "3.27.0"
+thiserror = "2.0.19"
+tauri-plugin-wdio-webdriver = { version = "1.2.0", optional = true }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Storage_FileSystem", "Win32_UI_Shell", "Win32_UI_WindowsAndMessaging"] }

@@ -1,0 +1,28 @@
+[package]
+name = "luke-pdf-thumbnail"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+description = "鲁科 PDF 编辑器的 Windows Explorer 首页缩略图处理器"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies.windows]
+version = "0.58"
+features = [
+    "implement",
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_Graphics_Imaging",
+    "Win32_System_Com",
+    "Win32_System_Com_StructuredStorage",
+    "Win32_UI_Shell",
+    "Win32_UI_Shell_PropertiesSystem",
+    "Storage_Streams",
+    "Data_Pdf",
+    "Foundation",
+]
+
+[dependencies]
+windows-core = "0.58"

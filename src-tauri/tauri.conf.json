@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "鲁科 PDF 编辑器",
+  "version": "0.3.5",
+  "identifier": "com.luke.pdfeditor",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' blob: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self' blob:; connect-src ipc: http://ipc.localhost"
+    },
+    "windows": [
+      {
+        "label": "main",
+        "title": "鲁科 PDF 编辑器",
+        "width": 1360,
+        "height": 860,
+        "minWidth": 860,
+        "minHeight": 600,
+        "center": true,
+        "resizable": true
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "鲁科开源项目",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "licenseFile": "../docs/legal/installer-license-zh-CN.txt",
+    "resources": {
+      "../LICENSE": "licenses/AGPL-3.0.txt",
+      "../THIRD_PARTY_NOTICES.md": "licenses/THIRD_PARTY_NOTICES.md",
+      "../docs/legal/THIRD_PARTY_LICENSES.md": "licenses/THIRD_PARTY_LICENSES.md",
+      "../docs/legal/licenses/Stirling-PDF-MIT.txt": "licenses/Stirling-PDF-MIT.txt",
+      "icons/pdf-file.ico": "assets/pdf-file.ico",
+      "thumbnail-handler/target/release/luke_pdf_thumbnail.dll": "shell/luke_pdf_thumbnail.dll"
+    },
+    "windows": {
+      "nsis": {
+        "template": "windows/installer.nsi",
+        "installerHooks": "windows/installer-hooks.nsh",
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "installMode": "currentUser",
+        "languages": ["SimpChinese"],
+        "displayLanguageSelector": false,
+        "startMenuFolder": "鲁科 PDF 编辑器"
+      }
+    },
+    "shortDescription": "现代、离线、开源的 PDF 阅读与批注工具",
+    "longDescription": "鲁科 PDF 编辑器是一款面向专业阅读和批注工作流的离线开源 PDF 桌面应用。"
+  }
+}

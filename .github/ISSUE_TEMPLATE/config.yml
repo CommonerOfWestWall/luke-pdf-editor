@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用问题与方案讨论
+    url: https://github.com/CommonerOfWestWall/luke-pdf-editor/discussions
+    about: 不确定是否为缺陷时，请先在 Discussions 讨论。
+  - name: 私密安全漏洞报告
+    url: https://github.com/CommonerOfWestWall/luke-pdf-editor/security/advisories/new
+    about: 不要在公开 Issue 中提交漏洞利用、恶意 PDF 或敏感文档。

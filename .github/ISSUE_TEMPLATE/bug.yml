@@ -1,0 +1,57 @@
+name: 缺陷报告
+description: 报告可复现的程序问题或 PDF 兼容性问题
+title: "[Bug] "
+labels: [bug, triage]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 问题描述
+      description: 请说明实际行为和期望行为。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: "1. 打开…\n2. 点击…\n3. 观察…"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本与系统
+      placeholder: "0.3.5 / Windows 11 x64 / 显示缩放 150%"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题领域
+      options:
+        - 打开、保存或关闭
+        - 查看、导航或搜索
+        - 鲁科 Look 审读意见
+        - 批注或评论
+        - 打印
+        - 安装、文件关联或缩略图
+        - 性能、无障碍或其他
+    validations:
+      required: true
+  - type: textarea
+    id: document
+    attributes:
+      label: 测试文档
+      description: 请仅上传有权分享且不含敏感信息的最小 PDF；否则描述其来源和特征。
+  - type: textarea
+    id: logs
+    attributes:
+      label: 脱敏日志
+      description: 不要提交文档正文、批注文字、完整本地路径或任何凭证。
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我确认公开内容不包含无权分享的 PDF、批注、个人信息、完整本地路径或凭证。
+          required: true

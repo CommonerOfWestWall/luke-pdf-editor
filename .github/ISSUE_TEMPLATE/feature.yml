@@ -1,0 +1,32 @@
+name: 功能建议
+description: 提议一个可以独立验收的功能
+title: "[Feature] "
+labels: [enhancement, triage]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 用户问题
+      description: 描述要解决的工作流问题，而不只是控件或实现方式。
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 可观察结果
+      description: 写出完成后用户能做到什么，以及如何验收。
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 功能领域
+      options:
+        - 查看与导航
+        - 批注与评论
+        - 文件与恢复
+        - 页面组织
+        - 表单、OCR 或签名
+        - 性能、可访问性或安全
+    validations:
+      required: true
